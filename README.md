@@ -1,1 +1,1 @@
-# get_next_line
+The "Get Next Line" project 📘 is about creating a simple yet effective C function to read lines 📝 from a file. The core task is crafting a get_next_line function that neatly returns a line from a file descriptor 🖥️. Key aspects include handling memory 🧠 and errors 🚫 with precision, particularly during multiple calls. The advanced challenge 🔥 involves juggling multiple file descriptors at the same time, demonstrating skills in file handling and memory management in C. 🛠️
