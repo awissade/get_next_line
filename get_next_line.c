@@ -6,7 +6,7 @@
 /*   By: awissade <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 18:32:17 by awissade          #+#    #+#             */
-/*   Updated: 2024/01/13 13:12:08 by awissade         ###   ########.fr       */
+/*   Updated: 2024/04/24 20:47:23 by awissade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*readed_line(char *line, int fd)
 	if (!buffer)
 		return (NULL);
 	size_readed = 1;
-	while (size_readed > 0 && !ft_strchr(line, '\n'))
+	while (size_readed > 0 && !gnl_strchr(line, '\n'))
 	{
 		size_readed = read(fd, buffer, BUFFER_SIZE);
 		if (size_readed == -1)
@@ -31,7 +31,7 @@ char	*readed_line(char *line, int fd)
 			return (NULL);
 		}
 		buffer[size_readed] = '\0';
-		line = ft_strjoin(line, buffer);
+		line = gnl_strjoin(line, buffer);
 		if (!line)
 			return (NULL);
 	}
@@ -76,15 +76,16 @@ char	*remainder_line(char *line)
 	i = 0;
 	while (line[i] && line[i] != '\n')
 		i++;
+	if (line[i] == '\n')
+		i++;
 	if (!line[i])
 	{
 		free(line);
 		return (NULL);
 	}
-	rem = (char *)malloc(sizeof(char) * (ft_strlen(line) - i));
+	rem = (char *)malloc(sizeof(char) * (gnl_strlen(line) - i));
 	if (!rem)
 		return (NULL);
-	i++;
 	j = 0;
 	while (line[i])
 		rem[j++] = line[i++];

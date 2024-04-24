@@ -6,7 +6,7 @@
 /*   By: awissade <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 15:26:31 by awissade          #+#    #+#             */
-/*   Updated: 2024/01/11 16:19:04 by awissade         ###   ########.fr       */
+/*   Updated: 2024/04/24 20:44:32 by awissade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 # include <stdlib.h>
 
 char	*get_next_line(int fd);
-size_t	ft_strlen(char *str);
-char	*ft_strjoin(char *line, char *buffer);
-char	*ft_strchr(char *line, int c);
+size_t	gnl_strlen(char *str);
+char	*gnl_strjoin(char *line, char *buffer);
+char	*gnl_strchr(char *line, int c);
 
 #endif
